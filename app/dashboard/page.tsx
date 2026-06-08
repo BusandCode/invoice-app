@@ -10,6 +10,7 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button";
 import { CirclePlus } from 'lucide-react';
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -17,9 +18,11 @@ export default function Home() {
         <div className="w-full flex items-center justify-between">
             <h1 className="text-3xl font-bold">Invoices</h1>
             <p>
-                <Button className="inline-flex gap-2" variant="ghost">
-                <CirclePlus className="w-4 h-4" />
-                    Create Invoice
+                <Button className="inline-flex gap-2" variant="ghost" asChild>
+                    <Link href="/invoices/new">
+                        <CirclePlus className="w-4 h-4" />
+                        Create Invoice
+                    </Link>
                 </Button>
             </p>
         </div>
